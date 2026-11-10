@@ -1,6 +1,3 @@
-console.log("hello world");
-// ! Problem --> 1
-
 const multiplyValue = (value: number, multplier?: number): number => {
   if (multplier === undefined) {
     return value * 2;
@@ -52,8 +49,6 @@ console.log(
   concatenateArrays([1, 2], [3, 4], [5]),
 );
 
-// !problem 5 -->
-
 interface Course {
   title: string;
   students: number;
@@ -75,9 +70,8 @@ const courses = [
   { title: "Next.js Pro", students: 85, isPublished: true },
 ];
 
-console.log(getPopularCourses(courses, 80));
+getPopularCourses(courses, 80);
 
-// !problem 6
 const pluckValues = <T, K extends keyof T>(items: T[], key: K): T[K][] => {
   return items.map((item) => item[key]);
 };
@@ -89,6 +83,9 @@ const users = [
   { id: 3, name: "Tariq", role: "Subscriber" },
 ];
 
+// Sample Input:
+pluckValues(users, "name");
+pluckValues(users, "id");
 
 class Employee {
   constructor(
@@ -113,9 +110,8 @@ class Manager extends Employee {
 }
 // Sample Input:
 const manager = new Manager("Alice", 50000, "Engineering");
-console.log(manager.getDetails());
-console.log(manager.getRoleInfo());
-
+manager.getDetails()
+manager.getRoleInfo();
 
 function validateAgeAsync(age: number): Promise<string> {
   return new Promise((resolve, reject) => {
@@ -128,4 +124,3 @@ function validateAgeAsync(age: number): Promise<string> {
     }
   });
 }
-
